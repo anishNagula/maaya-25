@@ -5,7 +5,6 @@
     justify-content: center;
     min-height: 100vh;
     width: 100%;
-    /* Mobile-first padding */
     padding: 80px 1rem 2rem 1rem;
     font-family: 'Press Start 2P', cursive;
     color: var(--color-text);
@@ -13,19 +12,17 @@
 }
 
 .mainTitle {
-    /* Smaller font size for mobile */
     font-size: 1.5rem;
     color: var(--color-accent);
     margin-bottom: 2rem;
     text-align: center;
 }
 
-/* --- The Ticket Styling --- */
 
 .ticket {
     width: 100%;
     max-width: 500px;
-    background-color: #111; /* Kept dark gray for contrast */
+    background-color: #111;
     border: 2px solid var(--color-accent);
     display: flex;
     flex-direction: column;
@@ -33,7 +30,6 @@
     position: relative;
 }
 
-/* The circular cutouts on the sides */
 .ticket::before, .ticket::after {
     content: '';
     position: absolute;
@@ -56,7 +52,6 @@
 }
 
 .ticketContent {
-    /* Smaller padding for mobile */
     padding: 2rem 1.5rem;
     text-align: center;
 }
@@ -68,7 +63,6 @@
 }
 
 .comingSoonText {
-    /* Smaller font size for mobile */
     font-size: 2rem;
     color: var(--color-text);
     line-height: 1;
@@ -93,7 +87,6 @@
 }
 
 .ticketStub {
-    /* Smaller padding for mobile */
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -114,10 +107,8 @@
     );
 }
 
-/* --- Media Query for DESKTOP screens (768px and wider) --- */
 @media (min-width: 768px) {
     .pageContainer {
-        /* Restore larger padding for desktop */
         padding: 120px 2rem 2rem 2rem;
     }
     .mainTitle {

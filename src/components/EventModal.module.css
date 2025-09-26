@@ -19,11 +19,9 @@
     max-width: 600px;
     background-color: var(--color-background);
     border: 2px solid var(--color-accent);
-    /* Mobile-first padding */
     padding: 2rem 1.5rem;
     color: var(--color-text);
     box-shadow: 0 0 30px rgba(9, 254, 49, 0.4);
-    /* CRITICAL: Makes modal scrollable on small screens if content is tall */
     max-height: 90vh;
     overflow-y: auto;
     font-family: Arial, Helvetica, sans-serif;
@@ -61,7 +59,6 @@
     line-height: 1.8;
 }
 
-/* Button is full-width on mobile for easy tapping */
 .registerButton {
     width: 100%;
     padding: 1rem;
@@ -78,7 +75,6 @@
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-/* --- Media Query for DESKTOP screens (768px and wider) --- */
 @media (min-width: 768px) {
     .modalContent {
         padding: 2.5rem;
@@ -90,7 +86,7 @@
         font-size: 0.9rem;
     }
     .registerButton {
-        width: auto; /* Reverts to auto-width on desktop */
+        width: auto;
         padding: 1rem 2rem;
         font-size: 1rem;
     }

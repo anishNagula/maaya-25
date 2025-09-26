@@ -17,7 +17,6 @@ const ConcertPage = () => {
         <div className={styles.ticketPerforation}></div>
         <div className={styles.ticketStub}>
             <p className={styles.stubText}>MAAYA'25</p>
-            {/* A simple div styled to look like a barcode */}
             <div className={styles.barcode}></div>
             <p className={styles.stubText}>#RETRONOMIA</p>
         </div>

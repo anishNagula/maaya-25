@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styles from './EventModal.module.css';
 
 const EventModal = ({ event, onClose }) => {
-  // useEffect hook to handle the 'Escape' key press
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -10,14 +9,12 @@ const EventModal = ({ event, onClose }) => {
       }
     };
 
-    // Add event listener when the modal is mounted
     document.addEventListener('keydown', handleKeyDown);
 
-    // Clean up the event listener when the modal is unmounted
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClose]); // Dependency array ensures this only runs if onClose changes
+  }, [onClose]);
 
   if (!event) return null;
 

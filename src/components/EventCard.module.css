@@ -11,12 +11,11 @@
     box-shadow: 0 0 20px rgba(9, 254, 49, 0.3);
 }
 
-/* This is the key responsive fix */
 .cardImage {
     width: 100%;
     display: block;
-    aspect-ratio: 16 / 10; /* Ensures a consistent shape */
-    object-fit: cover; /* Prevents image stretching */
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
 }
 
 .cardContent {
@@ -35,7 +34,6 @@
     color: var(--color-accent);
 }
 
-/* On larger screens, we can increase padding and font size slightly */
 @media (min-width: 768px) {
     .cardContent {
         padding: 1.5rem;

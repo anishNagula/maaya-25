@@ -4,7 +4,6 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    /* Mobile-first padding */
     padding: 80px 1rem 2rem 1rem;
     font-family: 'Press Start 2P', cursive;
     color: var(--color-text);
@@ -12,7 +11,6 @@
 }
 
 .mainTitle {
-    /* Mobile-first font size */
     font-size: 1.5rem;
     color: var(--color-accent);
     margin-bottom: 2rem;
@@ -31,7 +29,6 @@
     background: none;
     border: 2px solid rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.7);
-    /* Smaller padding and font for mobile */
     padding: 0.5rem 1rem;
     font-size: 0.7rem;
     cursor: pointer;
@@ -52,14 +49,12 @@
 
 .gridContainer {
     display: grid;
-    /* More flexible column size for mobile */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
 }
 
-/* --- Media Query for DESKTOP screens (768px and wider) --- */
 @media (min-width: 768px) {
     .pageContainer {
         padding: 120px 2rem 2rem 2rem;
