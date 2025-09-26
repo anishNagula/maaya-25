@@ -4,14 +4,80 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    padding: 120px 2rem 2rem 2rem;
+    /* Mobile-first padding */
+    padding: 80px 1rem 2rem 1rem;
     font-family: 'Press Start 2P', cursive;
-    color: #fff;
-    background-color: #000;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
-.mainTitle { font-size: 2rem; color: #09FE31; margin-bottom: 3rem; text-align: center; }
-.filterContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
-.filterButton { background: none; border: 2px solid rgba(255, 255, 255, 0.5); color: rgba(255, 255, 255, 0.7); padding: 0.5rem 1.5rem; font-family: 'Press Start 2P', cursive; font-size: 0.8rem; cursor: pointer; transition: all 0.2s ease; }
-.filterButton:hover { background-color: rgba(9, 254, 49, 0.1); border-color: #09FE31; color: #09FE31; }
-.filterButton.active { background-color: #09FE31; border-color: #09FE31; color: #000; }
-.gridContainer { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; width: 100%; max-width: 1200px; }
+
+.mainTitle {
+    /* Mobile-first font size */
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.filterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.filterButton {
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+    /* Smaller padding and font for mobile */
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+    background-color: rgba(9, 254, 49, 0.1);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.filterButton.active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-background);
+}
+
+.gridContainer {
+    display: grid;
+    /* More flexible column size for mobile */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Media Query for DESKTOP screens (768px and wider) --- */
+@media (min-width: 768px) {
+    .pageContainer {
+        padding: 120px 2rem 2rem 2rem;
+    }
+    .mainTitle {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .filterContainer {
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+    .filterButton {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.8rem;
+    }
+    .gridContainer {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}

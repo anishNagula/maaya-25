@@ -1,14 +1,21 @@
+/* Using a CSS variable for the footer height makes it easier to manage spacing */
+:root {
+    --footer-height-mobile: 220px;
+    --footer-height-desktop: 140px;
+}
+
 .pageContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-background);
+    color: var(--color-text);
     overflow: hidden;
     position: relative;
-    padding-bottom: 180px; /* Add padding to prevent content from overlapping the footer */
+    padding: 1rem; /* Universal padding for mobile */
+    padding-bottom: var(--footer-height-mobile); /* Makes space for the footer */
 }
 
 .symbolContainer {
@@ -23,7 +30,7 @@
 .symbol {
     position: absolute;
     font-family: 'Press Start 2P', cursive;
-    opacity: 0.3;
+    opacity: 0.4;
 }
 
 .content {
@@ -32,84 +39,96 @@
     z-index: 10;
 }
 
+/* clamp() makes the font size responsive: min size, preferred size, max size */
 .title {
-    font-size: 8rem;
+    font-size: clamp(3.5rem, 15vw, 8rem);
     font-weight: bolder;
-    font-family: 'Press Start 2P', cursive;
-    color: #fff;
+    color: var(--color-text);
 }
 
 .subtitle {
-    color: #09FE31;
-    font-family: 'Press Start 2P', cursive;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .actionButton {
-    margin-top: 2%;
-    padding: 1rem 2rem;
-    background-color: black;
-    color: white;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
     font-family: 'Press Start 2P', cursive;
-    border: solid white 2px;
+    border: solid var(--color-text) 2px;
     transition: all 0.2s ease-in-out;
 }
 
 .actionButton:hover {
     cursor: pointer;
-    background-color: #09FE31;
-    color: #000;
-    border-color: #09FE31;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border-color: var(--color-accent);
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(9, 254, 49, 0.4);
 }
 
-/* --- NEW FOOTER STYLES --- */
+/* --- RESPONSIVE FOOTER STYLES --- */
 
 .footer {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 2rem;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    backdrop-filter: blur(5px); /* Frosted glass effect */
-    border-top: 2px solid #09FE31;
-    z-index: 20; /* Ensures footer is above symbols */
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border-top: 2px solid var(--color-accent);
+    z-index: 20;
 }
 
 .footerContent {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column; /* Stack vertically on mobile */
-    gap: 1.5rem;
+    flex-direction: column; /* Stacks on mobile by default */
+    gap: 1rem;
     text-align: center;
 }
 
 .footerSection {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
+    font-size: 0.6rem; /* Smaller font for mobile */
     line-height: 1.6;
 }
 
 .footerTitle {
-    color: #09FE31;
+    color: var(--color-accent);
     margin-bottom: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .footerText {
-    color: #FFFFFF;
+    color: var(--color-text);
 }
 
-/* On larger screens, display side-by-side */
+/* --- Media Query for DESKTOP screens --- */
 @media (min-width: 768px) {
+    .pageContainer {
+        padding-bottom: var(--footer-height-desktop); /* Adjust padding for wider footer */
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .footer {
+        padding: 1.5rem 2rem;
+    }
     .footerContent {
-        flex-direction: row;
+        flex-direction: row; /* Side-by-side on desktop */
         justify-content: space-around;
         text-align: left;
     }
-    .pageContainer {
-        padding-bottom: 140px; /* Adjust padding for wider footer */
+    .footerSection {
+        font-size: 0.7rem;
+    }
+    .footerTitle {
+        font-size: 0.8rem;
     }
 }

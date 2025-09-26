@@ -1,6 +1,46 @@
-.card { border: 2px solid #fff; background-color: #111; cursor: pointer; transition: all 0.2s ease-in-out; }
-.card:hover { transform: scale(1.05); border-color: #09FE31; box-shadow: 0 0 20px rgba(9, 254, 49, 0.3); }
-.cardImage { width: 420px; height: 400px; object-fit: cover; display: block; padding-left: 10%; }
-.cardContent { padding: 1.5rem; text-align: center; }
-.cardTitle { font-family: 'Press Start 2P', cursive; font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff; }
-.cardCategory { font-size: 0.8rem; color: #09FE31; }
+.card {
+    border: 2px solid var(--color-text);
+    background-color: #111;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 20px rgba(9, 254, 49, 0.3);
+}
+
+/* This is the key responsive fix */
+.cardImage {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 10; /* Ensures a consistent shape */
+    object-fit: cover; /* Prevents image stretching */
+}
+
+.cardContent {
+    padding: 1rem;
+    text-align: center;
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.cardCategory {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+}
+
+/* On larger screens, we can increase padding and font size slightly */
+@media (min-width: 768px) {
+    .cardContent {
+        padding: 1.5rem;
+    }
+    .cardTitle {
+        font-size: 1.2rem;
+    }
+}

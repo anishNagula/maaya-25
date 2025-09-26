@@ -1,8 +1,97 @@
-.backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 1rem; }
-.modalContent { position: relative; width: 100%; max-width: 600px; background-color: #000; border: 2px solid #09FE31; padding: 2.5rem; font-family: 'Press Start 2P', cursive; color: #fff; box-shadow: 0 0 30px rgba(9, 254, 49, 0.4); }
-.closeButton { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: #fff; font-family: 'Press Start 2P', cursive; font-size: 1.5rem; cursor: pointer; }
-.modalTitle { font-size: 2rem; color: #09FE31; margin-bottom: 1.5rem; }
-.modalDescription { font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9); }
-.modalDetails { border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 1.5rem; margin-bottom: 2rem; font-size: 0.9rem; line-height: 1.8; }
-.registerButton { padding: 1rem 2rem; background-color: #09FE31; color: #000; font-family: 'Press Start 2P', cursive; border: none; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; }
-.registerButton:hover { background-color: #fff; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modalContent {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--color-background);
+    border: 2px solid var(--color-accent);
+    /* Mobile-first padding */
+    padding: 2rem 1.5rem;
+    color: var(--color-text);
+    box-shadow: 0 0 30px rgba(9, 254, 49, 0.4);
+    /* CRITICAL: Makes modal scrollable on small screens if content is tall */
+    max-height: 90vh;
+    overflow-y: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.modalDescription {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.modalDetails {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    line-height: 1.8;
+}
+
+/* Button is full-width on mobile for easy tapping */
+.registerButton {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.registerButton:hover {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Media Query for DESKTOP screens (768px and wider) --- */
+@media (min-width: 768px) {
+    .modalContent {
+        padding: 2.5rem;
+    }
+    .modalTitle {
+        font-size: 2rem;
+    }
+    .modalDescription, .modalDetails {
+        font-size: 0.9rem;
+    }
+    .registerButton {
+        width: auto; /* Reverts to auto-width on desktop */
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}

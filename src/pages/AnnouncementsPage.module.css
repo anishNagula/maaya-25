@@ -4,31 +4,35 @@
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    padding: 120px 2rem 2rem 2rem; /* Top padding to clear navbar */
+    /* Mobile-first padding (less top space) */
+    padding: 80px 1rem 2rem 1rem;
     font-family: 'Press Start 2P', cursive;
-    color: #fff;
-    background-color: #000;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 .mainTitle {
-    font-size: 2rem;
-    color: #09FE31;
-    margin-bottom: 3rem;
+    /* Smaller font size for mobile */
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
     text-align: center;
 }
 
 .announcementCard {
     width: 100%;
     max-width: 800px;
-    border: 2px solid #09FE31;
-    padding: 2rem;
-    background-color: rgba(9, 254, 49, 0.05); /* Very subtle green tint */
+    border: 2px solid var(--color-accent);
+    /* Smaller padding for mobile */
+    padding: 1.5rem;
+    background-color: rgba(9, 254, 49, 0.05);
     box-shadow: 0 0 15px rgba(9, 254, 49, 0.2);
 }
 
 .cardTitle {
-    font-size: 1.5rem;
-    color: #fff;
+    /* Smaller font size for mobile */
+    font-size: 1.1rem;
+    color: var(--color-text);
     margin-bottom: 1rem;
     line-height: 1.4;
 }
@@ -36,8 +40,33 @@
 .cardMeta {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     padding-top: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.7);
     display: flex;
-    justify-content: space-between;
+    /* Stacks vertically on mobile for readability */
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* --- Media Query for DESKTOP screens (768px and wider) --- */
+@media (min-width: 768px) {
+    .pageContainer {
+        /* Restore larger padding for desktop */
+        padding: 120px 2rem 2rem 2rem;
+    }
+    .mainTitle {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .announcementCard {
+        padding: 2rem;
+    }
+    .cardTitle {
+        font-size: 1.5rem;
+    }
+    .cardMeta {
+        /* Side-by-side on desktop */
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

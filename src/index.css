@@ -1,20 +1,25 @@
-/* This file remains the same */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* Cleaned up CSS Variables for clarity */
 :root {
-  --color-cream: #000;
-  --color-deep-brown: #fff;
-  --color-burnt-orange: #E86A33;
-  --color-funky-teal: #1E836C;
-  --color-mustard-yellow: #FFC947;
+  --color-background: #000000;
+  --color-text: #FFFFFF;
+  --color-accent: #09FE31;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
 
 body {
-  background-color: var(--color-cream);
-  color: var(--color-deep-brown);
+  background-color: var(--color-background);
+  color: var(--color-text);
   font-family: 'Press Start 2P', sans-serif;
 }
 
-a { color: inherit; text-decoration: none; }
+a { 
+  color: inherit; 
+  text-decoration: none; 
+}
