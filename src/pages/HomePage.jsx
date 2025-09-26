@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './HomePage.module.css';
 
 const symbolData = [
@@ -70,7 +71,7 @@ const HomePage = () => {
           The future is retro. The annual fest is back.
         </p>
         <button className={styles.actionButton}>
-          EXPLORE THE UNKNOWN
+          <NavLink to="/events">EXPLORE THE UNKNOWN</NavLink>
         </button>
       </div>
 
