@@ -1,0 +1,115 @@
+.pageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 180px; /* Add padding to prevent content from overlapping the footer */
+}
+
+.symbolContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.symbol {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    opacity: 0.3;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    font-size: 8rem;
+    font-weight: bolder;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+}
+
+.subtitle {
+    color: #09FE31;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.actionButton {
+    margin-top: 2%;
+    padding: 1rem 2rem;
+    background-color: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    border: solid white 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.actionButton:hover {
+    cursor: pointer;
+    background-color: #09FE31;
+    color: #000;
+    border-color: #09FE31;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(9, 254, 49, 0.4);
+}
+
+/* --- NEW FOOTER STYLES --- */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border-top: 2px solid #09FE31;
+    z-index: 20; /* Ensures footer is above symbols */
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.footerSection {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    line-height: 1.6;
+}
+
+.footerTitle {
+    color: #09FE31;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.footerText {
+    color: #FFFFFF;
+}
+
+/* On larger screens, display side-by-side */
+@media (min-width: 768px) {
+    .footerContent {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+    .pageContainer {
+        padding-bottom: 140px; /* Adjust padding for wider footer */
+    }
+}
