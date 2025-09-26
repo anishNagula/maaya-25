@@ -1,0 +1,43 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 120px 2rem 2rem 2rem; /* Top padding to clear navbar */
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    background-color: #000;
+}
+
+.mainTitle {
+    font-size: 2rem;
+    color: #09FE31;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.announcementCard {
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #09FE31;
+    padding: 2rem;
+    background-color: rgba(9, 254, 49, 0.05); /* Very subtle green tint */
+    box-shadow: 0 0 15px rgba(9, 254, 49, 0.2);
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.cardMeta {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;
+}
