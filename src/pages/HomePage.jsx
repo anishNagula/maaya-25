@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './HomePage.module.css';
 
-// ... your symbolData array remains unchanged ...
 const symbolData = [
   { char: '!', top: '10%', left: '15%', color: '#09FE31', size: '2.5rem' },
   { char: '@', top: '15%', left: '85%', color: '#FFFFFF', size: '1.2rem' },
@@ -21,33 +20,27 @@ const HomePage = () => {
   const titleRef = useRef(null);
   const containerRef = useRef(null);
 
-  // This effect will run on mount and whenever the window is resized
   useEffect(() => {
     const adjustFontSize = () => {
       const container = containerRef.current;
       const title = titleRef.current;
       if (!container || !title) return;
 
-      // Start with a large font size and shrink it down
-      let fontSize = 150; // Start with a large base size in pixels
+      let fontSize = 150;
       title.style.fontSize = `${fontSize}px`;
 
-      // Keep shrinking the font size until the text fits inside its container
       while (title.scrollWidth > container.clientWidth && fontSize > 10) {
         fontSize--;
         title.style.fontSize = `${fontSize}px`;
       }
     };
 
-    // Adjust on initial load
     adjustFontSize();
 
-    // Adjust whenever the window size changes
     window.addEventListener('resize', adjustFontSize);
 
-    // Cleanup function to remove the listener
     return () => window.removeEventListener('resize', adjustFontSize);
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   return (
     <div className={styles.pageContainer}>
@@ -69,9 +62,7 @@ const HomePage = () => {
         ))}
       </div>
       
-      {/* Assigning a ref to the container to measure its width */}
       <div ref={containerRef} className={styles.content}>
-        {/* Assigning a ref to the title to measure and style it */}
         <h1 ref={titleRef} className={styles.title}>
           Retronomia
         </h1>
@@ -83,7 +74,6 @@ const HomePage = () => {
         </button>
       </div>
 
-      {/* ... footer ... */}
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>

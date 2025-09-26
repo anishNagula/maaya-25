@@ -68,11 +68,11 @@
 }
 
 .link:hover {
-    color: var(--color-accent);
+    color: orange;
 }
 
 .activeLink {
-    color: var(--color-accent);
+    color: orange;
 }
 
 @media (min-width: 768px) {
